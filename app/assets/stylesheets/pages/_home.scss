@@ -31,7 +31,7 @@ div.page-container {
   object-fit: cover;
   border: 1px solid cyan;
   transition: width 0.5s, height 0.5s,  border-radius 0.5s;
-  &:hover {
+  &:active {
     width: 200px;
     height: 200px;
     border-radius: 5px;
