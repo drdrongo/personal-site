@@ -1,0 +1,39 @@
+.projects-container {
+  width: 100%;
+  height: 100%;
+  padding: 32px 64px 32px 64px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  border: 1px solid cyan;
+  padding: 16px;
+  display: flex;
+  margin-bottom: 16px;
+  color: white;
+  justify-content: space-between;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: cyan;
+  }
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.project-card img {
+  width: 30%;
+
+  object-fit: cover;
+
+}

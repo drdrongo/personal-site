@@ -1,11 +1,9 @@
 // Specific CSS for your home-page
-div.page-container {
-  padding: 80px 24px 24px 24px;
+body {
   background: black;
   color: cyan;
   background-image: url('space.jpg'), linear-gradient(rgba(0, 0, 0, 1), rgba(256, 256, 256, 1));
   background-size: contain;
-  height: 100vh;
 }
 
 .space-button {
@@ -13,7 +11,6 @@ div.page-container {
   background-color: rgba(44, 130, 201, 0.1);
   color: cyan;
   border-radius: 5px;
-  width: 100%;
   &:hover {
     background-color: rgba(44, 130, 201, 0.5);
     color: white;
