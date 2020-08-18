@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-hayato px-3">
+  <%= link_to 'Hayato Clarke', root_path, style: "word-wrap: no-wrap;" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%= image_tag 'list-icon.svg' %>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Work', projects_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'About', about_path %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to 'Hello', hello_path %>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,13 +1,23 @@
 <div class="container-fluid page-container" >
+  <div class="navbar"></div>
   <div class="container  d-flex flex-column">
     <div class="container p-3 mb-3" style="border: 1px solid cyan; border-radius: 5px; background: rgba(44, 130, 201, 0.1);">
-      <h1>Hayato Clarke</h1>
+      <h1>">Hayato Clarke</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum odit est fugit maxime magni atque saepe. Repudiandae labore, ducimus ratione quidem animi quasi quae, soluta nisi, expedita reprehenderit iste!</p>
     </div>
 
-    <%= image_tag 'hayato', class: "img-avatar align-self-center mb-3", style: "" %>
+    <%= image_tag 'hayato.jpg', class: "img-avatar align-self-center mb-3", style: "" %>
+
     <%= link_to projects_path, class: "btn space-button" do %>
-      <span>Projects</span>
+      <span>Work</span>
+    <% end %>
+
+    <%= link_to about_path, class: "btn space-button" do %>
+      <span>About</span>
+    <% end %>
+
+    <%= link_to hello_path, class: "btn space-button" do %>
+      <span>Hello</span>
     <% end %>
   </div>
 </div>
