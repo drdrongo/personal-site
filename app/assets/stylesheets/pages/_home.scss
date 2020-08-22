@@ -1,9 +1,12 @@
 // Specific CSS for your home-page
 body {
-  background: black;
-  color: cyan;
-  background-image: url('space.jpg'), linear-gradient(rgba(0, 0, 0, 1), rgba(256, 256, 256, 1));
-  background-size: contain;
+  background: white;
+  color: darkslategrey;
+  h1 {
+    font-weight: bold;
+  }
+  // background-image: url('space.jpg'), linear-gradient(rgba(0, 0, 0, 1), rgba(256, 256, 256, 1));
+  // background-size: contain;
 }
 
 .space-button {

@@ -1,0 +1,20 @@
+.about-box {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-box img {
+  flex: 0 0 48%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.about-box p {
+  flex: 0 0 48%;
+}
