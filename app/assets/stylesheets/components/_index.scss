@@ -8,7 +8,10 @@ html,
 body {
   height: 100%;
   margin: 0;
-  color: grey;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
 }
 
 .box {
@@ -23,8 +26,28 @@ body {
 
 .box .section.content {
   flex: 1 1 auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .box .section.footer {
   flex: 0 1 40px;
+}
+
+a {
+  text-decoration: none;
+  color: $body-color;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: cyan;
+  }
+  &:focus {
+    text-decoration: none;
+    color: $body-color;
+  }
+  &:active {
+    text-decoration: none;
+    color: $body-color;
+  }
 }
