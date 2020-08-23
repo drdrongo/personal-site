@@ -1,9 +1,60 @@
+<script>
+  const changeColorOfAll = (element, color) => {
+    var els = document.querySelectorAll(element);
+    for (var x = 0; x < els.length; x++)
+      els[x].style.color = color;
+  }
+
+  const changeStyleYellow = () => { 
+    document.body.style.background = '#fbb034';
+    document.body.style.color = 'black';
+    changeColorOfAll('.social-media-link', 'navy');
+    changeColorOfAll('.internet-link', 'navy');
+    changeFunction('Green');
+  }
+
+  const changeStyleGreen = () => {
+
+    document.body.style.background = '#2AA482';
+    document.body.style.color = 'white';
+    changeColorOfAll('.social-media-link', 'lightgreen')
+    changeColorOfAll('.internet-link', 'white');
+
+    changeFunction('Red')
+  }
+
+  const changeStyleRed = () => {
+    document.body.style.background = '#FB8D3F';
+    document.body.style.color = 'white';
+    changeColorOfAll('.social-media-link', 'black')
+    changeFunction('Black')
+  }
+
+  const changeStyleBlack = () => {
+
+    document.body.style.background = 'black'
+    document.body.style.color = 'cyan';
+    changeColorOfAll('.social-media-link', 'white')
+
+    // document.body.style.background = 'url("https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")'
+    // document.body.style.backgroundSize = 'contain';
+
+    changeFunction('Yellow')
+  }
+
+  const changeFunction = (style) => {
+    document.getElementById('style-changer').setAttribute('onclick',"changeStyle" + style + "()")
+  }
+</script>  
+
 <div class="navbar navbar-expand-md navbar-hayato px-3">
   <%= link_to 'Hayato Clarke', root_path, style: "word-wrap: no-wrap;" %>
+  
+  <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"></i> 
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <%= image_tag 'list-icon.svg' %>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
