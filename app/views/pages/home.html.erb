@@ -1,30 +1,16 @@
 <div class="container-fluid">
-  <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
-    <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-      <a class="nav-link px-1 p-1 active" style="font-size:8px" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-    </li>
-    <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-      <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
-    </li>
-    <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-      <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a>
-    </li>
-    <li class="nav-item" style="flex-basis: 23%;" role="presentation">
-      <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
-    </li>
-  </ul>
 
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <%= render 'pages/home_info' %>
     </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <%= render 'pages/about' %>
     </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="tab-pane" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <%= render 'projects/index', projects: @projects %>
     </div>
-    <div class="tab-pane fade" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+    <div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
       <%= render 'pages/hello' %>
     </div>
   </div>

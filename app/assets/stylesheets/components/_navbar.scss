@@ -1,14 +1,11 @@
 .navbar-hayato {
   justify-content: space-between;
   background-color: black;
-  // background: rgb(132,22,173);
-  // background: linear-gradient(90deg, rgba(132,22,173,0.8673844537815126) 28%, rgba(175,87,208,0.7497373949579832) 100%);
   height: 80px;
   color: white;
   font-size: 1.5em;
   border-bottom: none;
-  padding-right: 0;
-  padding-left: 1rem !important;
+  padding: 0;
 }
 
 .navbar-hayato a {
@@ -26,7 +23,7 @@
 }
 
 .navbar-hayato .navbar-collapse {
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
 .navbar-hayato img {
@@ -39,41 +36,20 @@ div {
   transition: height .5s, background-color .5s, width .5s;
 }
 
-// .show {
-//   top: 80px;
-//   background-color: rgba(0, 0, 0, .8);
-//   position: absolute;
-//   left: 0;
-//   transition: height .5s ease-in-out, background-color .5s ease-in-out, width .5s ease-in-out, background-color 0.5s ease-in-out;
-//   color: white;
-// }
+.navbar-collapse.collapsing ul{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+}
 
-// .show + .navbar-hayato {
-//   background-color: rgba(0, 0, 0, 0.8);
-//   transition: background-color 0.5s;
-// }
+.navbar-collapse.show ul{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+}
 
-// .show li {
-//   opacity: 1;
-//   transition: opacity .5s;
-//   text-shadow: 1px 1px 2px black;
-// }
-
-// .collapsing {
-//   top: 80px;
-//   height: 0;
-//   background-color: rgba(0, 0, 0, .5);
-//   position: absolute;
-//   left: 0;
-//   transition: height .5s ease-in-out, background-color .5s ease-in-out, width .5s ease-in-out;
-// }
-
-// .collapsing li {
-//   opacity: 0;
-//   transition: opacity .5s;
-// }
-
-// .navbar-collapse {
-//   padding: 32px;
-
-// }
+.nav-pills .nav-link.active {
+  background-color: rgba(0, 0, 0, 0);
+}
