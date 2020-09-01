@@ -51,3 +51,7 @@ a {
     color: $body-color;
   }
 }
+
+button:focus {
+  outline: none;
+}

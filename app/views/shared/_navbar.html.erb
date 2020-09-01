@@ -35,10 +35,6 @@
     document.body.style.background = 'black'
     document.body.style.color = 'cyan';
     changeColorOfAll('.social-media-link', 'white')
-
-    // document.body.style.background = 'url("https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")'
-    // document.body.style.backgroundSize = 'contain';
-
     changeFunction('Yellow')
   }
 
@@ -47,27 +43,34 @@
   }
 </script>  
 
-<div class="navbar navbar-expand-md navbar-hayato px-3">  
-  <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"></i> 
-  
+
+
+
+<div class="navbar navbar-expand-md navbar-hayato py-2 w-100">    
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <%= image_tag 'list-icon.svg' %>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav nav-pills nav-fill w-100" id="pills-tab" role="tablist">
-      <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-        <a class="nav-link px-1 p-1 active" style="font-size:8px" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+    <ul class="nav nav-pills nav-fill w-100 py-3" id="pills-tab" role="tablist">
+      <li class="nav-item mr-1" style="flex-basis: 21%;" role="presentation">
+        <a class="nav-link p-1 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
       </li>
-      <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-        <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
+      <li class="nav-item mr-1" style="flex-basis: 21%;" role="presentation">
+        <a class="nav-link p-1"　id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
       </li>
-      <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-        <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a>
+
+      <li>
+        <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"></i> 
       </li>
-      <li class="nav-item" style="flex-basis: 23%;" role="presentation">
-        <a class="nav-link px-1 p-1" style="font-size:8px"　id="p px-1ills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
+
+      <li class="nav-item mr-1" style="flex-basis: 21%;" role="presentation">
+        <a class="nav-link p-1"　id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a>
+      </li>
+      <li class="nav-item" style="flex-basis: 21%;" role="presentation">
+        <a class="nav-link p-1"　id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
       </li>
     </ul>
   </div>
 </div>
+
