@@ -1,26 +1,8 @@
-<div class="container h-75 py-3 module" style="border: 1px solid cyan;">
-  <h3>Hello</h3>
-  <p>I'd love to hear from you. To get in touch, simply <%= mail_to 'hayatoclarke@gmail.com', "Email Me", class: 'social-media-link'%>
-  or add me on <a class="social-media-link" href="https://www.linkedin.com/in/hayato-clarke/">Linkedin</a>, and click <a class="social-media-link" href="https://github.com/drdrongo">here</a> to visit my Github page.</p>
+<div class="hello-container">
+  <div class="hello-card">
+    <h2>Hello</h2>
+    <p>I'd love to hear from you.<br>To get in touch, simply <%= mail_to 'hayatoclarke@gmail.com', "Email Me", class: 'social-media-link'%>
+    or send me a request on <a class="social-media-link" href="https://www.linkedin.com/in/hayato-clarke/">Linkedin</a>, and click <a class="social-media-link" href="https://github.com/drdrongo">here</a> to visit my Github page.</p>
+  </div>
 </div>
 
-<div class="d-flex w-75 justify-content-around" style="margin: 0 auto;">
-  <a href="https://www.facebook.com/Hayatooooo" target="_blank">
-    <i class="fab fa-facebook-f social-media-link"></i>
-  </a>
-  <a href="https://www.instagram.com/hayayto/" target="_blank">
-    <i class="fab fa-instagram social-media-link"></i>
-  </a>
-
-  <a href="https://www.linkedin.com/in/hayato-clarke/" target="_blank">
-    <i class="fab fa-linkedin-in social-media-link"></i>
-  </a>
-
-  <a href="https://github.com/drdrongo" target="_blank">
-    <i class="fab fa-github social-media-link"></i>
-  </a>
-
-  <%= mail_to 'hayatoclarke@gmail.com' do %>
-    <i  class="far fa-envelope social-media-link"></i>
-  <% end %>
-</div>

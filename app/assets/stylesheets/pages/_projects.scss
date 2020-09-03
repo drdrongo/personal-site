@@ -3,15 +3,19 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  h2 {
+    padding-left: .4em;
+    margin-bottom: 0;
+  }
 }
 
 .project-card {
   display: flex;
   padding: 0;
-  color: white;
+  color: $body-color;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   padding-top: 1em;
   padding-bottom: 1em;
   min-height: 240px;
@@ -21,7 +25,7 @@
 
 .project-card a {
   text-decoration: none;
-  color: white;
+  color: $link-color;
   &:hover {
     color: cyan;
   }

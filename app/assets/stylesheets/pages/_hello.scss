@@ -2,6 +2,12 @@ body {
   transition: background-color 0.3s ease-in-out, color 0.3s, opacity 0.3s;
 }
 
+.hello-container {
+  height: 100%;
+  padding: 1em;
+  font-size: 1.3em;
+}
+
 .container {
   transition: border 0.3s;
 }
@@ -26,4 +32,8 @@ body {
     text-decoration: none;
     color: $body-color;
   }
+}
+
+i.social-media-link {
+  font-size: 2em;
 }
