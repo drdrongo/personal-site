@@ -1,25 +1,12 @@
-<div class="container-fluid page-container" >
-  <div class="navbar"></div>
-  <div class="container  d-flex flex-column">
-    <div class="container p-3 mb-3" style="background: rgba(44, 130, 201, 0.1);">
-      <h1>Hayato Clarke</h1>
-      <p>Hello! I'm Hayato. <br> I'm a Tokyo-based web developer and this is my personal site! Have a look around and tell me what you think!</p>
-    </div>
+<div class="page-container" >
+  <h2>Hayato Clarke</h2>
+  <p>
+    Hello! I'm Hayato.
+    <br>
+    I'm a Tokyo-based web developer and this is my personal site!
+    <br>
+    Have a look around and tell me what you think!
+  </p>
 
-    <%= image_tag 'hayato.jpg', class: "img-avatar align-self-center mb-3", style: "" %>
-
-    <% if false %>
-      <%= link_to projects_path, class: "btn space-button" do %>
-        <span>Work</span>
-      <% end %>
-
-      <%= link_to about_path, class: "btn space-button" do %>
-        <span>About</span>
-      <% end %>
-
-      <%= link_to hello_path, class: "btn space-button" do %>
-        <span>Hello</span>
-      <% end %>
-    <% end %>
-  </div>
+  <%= image_tag 'hayato.jpg' %>
 </div>
