@@ -31,18 +31,6 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-
-
-
-// const hamburger = () => {
-//   let x = document.getElementById("myLinks");
-//   if (x.style.display === "flex") {
-//     x.style.display = "none";
-//   } else {
-//     x.style.display = "flex";
-//   }
-// };
-
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 const hamburger = () => {
   let x = document.getElementById("myTopnav");
