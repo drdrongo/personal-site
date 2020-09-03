@@ -4,6 +4,9 @@
   min-height: 0;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid white;
+  overflow: hidden;
+  padding-top: 1em;
 }
 
 .about-box img {
@@ -17,4 +20,14 @@
 
 .about-box p {
   flex: 0 0 48%;
+}
+
+@media only screen and (max-width: 600px) {
+  .about-box {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  .about-box img {
+    order: 2;
+  }
 }

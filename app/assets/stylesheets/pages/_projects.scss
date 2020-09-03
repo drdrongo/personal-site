@@ -8,11 +8,12 @@
 .project-card {
   display: flex;
   padding: 0;
-  margin-bottom: 1em;
   color: white;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid white;
+  border-top: 1px solid white;
+  padding-top: 1em;
+  padding-bottom: 1em;
   min-height: 240px;
   max-height: 240px;
   overflow: hidden;
