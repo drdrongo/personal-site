@@ -41,6 +41,30 @@ const hamburger = () => {
   }
 }
 
+
+const panels = document.querySelectorAll('.panel');
+
+function addOpenClass() {
+  this.classList.add('open');
+}
+function addActiveClass() {
+  this.classList.add('open-active');
+}
+
+function removeActiveClass() {
+  this.classList.remove('open-active');
+}
+function removeOpenClass() {
+  this.classList.remove('open');
+}
+
+panels.forEach(panel => { panel.addEventListener('mouseout', removeActiveClass) });
+panels.forEach(panel => { panel.addEventListener('mouseout', removeOpenClass) });
+panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
+panels.forEach(panel => { panel.addEventListener('mouseover', addActiveClass) });
+
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
