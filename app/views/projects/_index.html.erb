@@ -1,9 +1,7 @@
-<div class="projects-container">
-  <div class="panels">
-    <% projects.each do |project| %>
-      <div class="panel" style='background-image: url(<%= asset_path("#{project.title.gsub(' ', '_')}.jpg") %>); background-size: cover; background-position: 50% 50%;'>
-        <h3><%= project.title %></h3>
-      </div>
-    <% end %>
-  </div>
+<div class="panels">
+  <% projects.each do |project| %>
+    <div class="panel" style='background-image: url(<%= asset_path("#{project.title.gsub(' ', '_')}.jpg") %>);'>
+      <h3><%= project.title %></h3>
+    </div>
+  <% end %>
 </div>
