@@ -1,18 +1,16 @@
-<div class="container-fluid">
 
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-      <%= render 'pages/home_info' %>
-    </div>
-    <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <%= render 'pages/about' %>
-    </div>
-    <div class="tab-pane" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-      <%= render 'projects/index', projects: @projects %>
-    </div>
-    <div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
-      <%= render 'pages/hello' %>
-    </div>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <%= render 'pages/home_info' %>
+  </div>
+  <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <%= render 'pages/about' %>
+  </div>
+  <div class="tab-pane" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <%= render 'projects/index', projects: @projects %>
+  </div>
+  <div class="tab-pane" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+    <%= render 'pages/hello' %>
   </div>
 </div>
 

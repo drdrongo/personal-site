@@ -40,12 +40,14 @@ h1, h2, h3, h4, h5 {
 
 .box .section.content {
   flex: 1 1 auto;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 
-.box .section.footer {
-  flex: 0 1 40px;
+.tab-pane {
+  height: 100%;
+}
+
+.tab-content {
+  height: 100%;
 }
 
 a {
