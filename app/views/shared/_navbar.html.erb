@@ -1,61 +1,117 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
- 
-
-
-
-<% if false %>
-  <div class="navbar navbar-expand-md navbar-hayato py-2 w-100">    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <%= image_tag 'list-icon.svg' %>
-    </button>
-
-    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
-      <ul class="nav nav-pills nav-fill w-100 py-3" id="pills-tab" role="tablist">
-        <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-          <a class="nav-link p-1 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item mr-1" id="profile-tab-link" style="flex-basis: 23%;" role="presentation">
-          <a class="nav-link p-1"　id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
-        </li>
-        <li class="nav-item mr-1" style="flex-basis: 23%;" role="presentation">
-          <a class="nav-link p-1"　id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a>
-        </li>
-        <li class="nav-item" style="flex-basis: 23%;" role="presentation">
-          <a class="nav-link p-1"　id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
-        </li>
-      </ul>
-    </div>
-    <i class="far fa-lightbulb mr-5 align-self-center" id="style-changer" onclick="changeStyleYellow()"></i> 
-  </div>
-  
-<% end %>
-
 <style>
-  .my-navbar {
-    width: 100%;
+  div.navbar {
+    color: white;
+    font-size: 1.5em;
+    border-bottom: none;
+    justify-content: space-between;
+    background-color: black;
     height: 80px;
-    background-color: pink;
     padding: 0;
-    margin: 0;
   }
 
-  .my-navbar.collapsed {
+  div.navbar .show ul {
+    position: absolute;
+    top: 80px;
+    height: 400px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    justify-content: space-between;
-    padding: 10% 0;
+    flex-direction: column;
     align-items: center;
+    transition: all 0.5s ease-in-out;
   }
+
+  div.navbar img {
+    width: 30px;
+    filter: invert(1);
+    border: 1px solid blue;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  div.navbar a, i {
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+  }
+
+  .navbar i {
+    font-size: 2em;
+  }
+
+  div.navbar a:hover, i:hover {
+    color: cyan;
+    transform: scale(1.5);
+    transition: all 0.5s;
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    .navbar-collapse {
+      opacity: 0;
+      width: 100%;
+      position: absolute; 
+      top: 0;
+      left: 0;
+      max-height: 0;
+      background-color: blue;
+      transition: all 0.5s;
+    }
+    div.navbar-collapse {
+      display: block;
+    }
+
+    .navbar-collapse.show {
+      opacity: 1;
+      max-height: 100%;
+      background-color: pink;
+      transition: all 0.5s;
+
+    }
+  }
+
+  .navbar-collapse {
+    transition: all 0.5s;
+    max-height: 100%;
+  }
+
+  .navbar-collapse.show {
+    flex-basis: 0;
+    transition: all 0.5s;
+    max-height: 0;
+  }
+
   
 </style>
 
-<div class="my-navbar">
-  <ul>
-    <li>
-      <a class="nav-link p-1 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-    </li>
-  </ul>
+<div class="navbar navbar-expand-md navbar py-2 w-100">    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <%= image_tag 'list-icon.svg' %>
+  </button>
+
+  <div class="collapse navbar-collapse">
+    <ul class="nav nav-pills nav-fill w-100 py-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link"　id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link"　id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link"　id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
+      </li>
+      <li>
+        <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"></i>
+      </li>
+    </ul>
+  </div>
 </div>
+  
 
 
 <script>
@@ -102,22 +158,19 @@
     document.getElementById('style-changer').setAttribute('onclick',"changeStyle" + style + "()")
   }
 
-  // document.querySelectorAll('a.nav-link').forEach(link => 
-  //   link.on('click', function(){
-  //     console.log('farts')
-  //     
-  //   })
-  // );
-
+  const navbarToggler = document.querySelector('button.navbar-toggler')
   const navbar = document.querySelector('.navbar-collapse')
+
+  navbarToggler.addEventListener('click', function() {
+    navbar.classList.toggle('show')
+    console.log('you should work!')
+  })
 
   document.querySelectorAll('a.nav-link').forEach((element) => {
     element.addEventListener('click', function() {
-      console.log('clicked!');
-      navbar.classList.remove('.show');
+      navbar.classList.remove('show');
     })
   })
-    
 
 
 </script> 
