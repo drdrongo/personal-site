@@ -1,15 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 .panels {
   min-height: 74vh;
   height: 100%;
@@ -19,7 +7,7 @@ body {
 }
 
 .panel {
-  background: #6B0F9C;
+  background-color: var(--bg-color);
   box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
   color: white;
   text-align: center;
@@ -33,7 +21,6 @@ body {
   font-size: 20px;
   background-size: cover;
   background-position: center;
-
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -47,8 +34,8 @@ body {
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-      opacity: .3; 
+      background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 1), var(--hover-color));
+      opacity: .4; 
   }
 }
 
@@ -84,64 +71,6 @@ body {
 .panel.open {
   font-size: 40px;
   flex-grow: 5;
-
 }
 
-.projects-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  h2 {
-    padding-left: .4em;
-    margin-bottom: 0;
-  }
-}
 
-.project-card {
-  display: flex;
-  padding: 0;
-  color: $body-color;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid white;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  min-height: 240px;
-  max-height: 240px;
-  overflow: hidden;
-}
-
-.project-card a {
-  text-decoration: none;
-  color: $link-color;
-  &:hover {
-    color: cyan;
-  }
-}
-
-.project-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 1em;
-}
-
-.project-card img {
-  width: 40%;
-  min-height: 100%;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 600px) {
-  .project-card {
-    flex-direction: column;
-    max-height: none;
-    img {
-      width: 100%;
-      max-height: 300px;
-    }
-  }
-}
