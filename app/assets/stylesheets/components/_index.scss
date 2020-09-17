@@ -8,6 +8,17 @@ html,
 body {
   height: 100%;
   margin: 0;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: all 0.2s;
+  position: relative;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 h1, h2, h3, h4, h5 {
@@ -21,7 +32,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .box .section.header {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 
 .box .section.content {
@@ -36,19 +47,19 @@ h1, h2, h3, h4, h5 {
 
 a {
   text-decoration: none;
-  color: $body-color;
   font-weight: bold;
+  color: var(--font-color);
   &:hover {
     text-decoration: none;
-    color: cyan;
+    color: var(--hover-color);
   }
   &:focus {
     text-decoration: none;
-    color: $body-color;
+    color: var(--font-color);
   }
   &:active {
     text-decoration: none;
-    color: $body-color;
+    color: var(--font-color);
   }
 }
 

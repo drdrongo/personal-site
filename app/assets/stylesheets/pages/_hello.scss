@@ -1,36 +1,24 @@
-body {
-  transition: background-color 0.3s ease-in-out, color 0.3s, opacity 0.3s;
-}
-
 .hello-container {
   height: 100%;
   padding: 1em;
   font-size: 1.3em;
 }
 
-.container {
-  transition: border 0.3s;
-}
-
-.internet-link {
-  transition: color 0.3s;
-}
 .social-media-link {
-  transition: color 0.3s;
   text-decoration: none;
-  color: $body-color;
+  color: var(--font-color);
   font-weight: bold;
   &:hover {
     text-decoration: none;
-    color: cyan;
+    color: var(--hover-color);
   }
   &:focus {
     text-decoration: none;
-    color: $body-color;
+    color: var(--font-color);
   }
   &:active {
     text-decoration: none;
-    color: $body-color;
+    color: var(--font-color);
   }
 }
 
