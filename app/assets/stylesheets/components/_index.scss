@@ -8,6 +8,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  background-color: black;
 }
 
 h1, h2, h3, h4, h5 {
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .box .section.header {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 
 .box .section.content {

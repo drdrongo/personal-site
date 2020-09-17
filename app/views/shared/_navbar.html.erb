@@ -5,11 +5,13 @@
     border-bottom: none;
     justify-content: space-between;
     background-color: black;
-    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
     padding: 0;
   }
 
   div.navbar .show ul {
+    z-index: 99;
     position: absolute;
     top: 80px;
     height: 400px;
@@ -21,25 +23,69 @@
     transition: all 0.5s ease-in-out;
   }
 
+  div.navbar li {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   div.navbar img {
-    width: 30px;
+    width: 36px;
     filter: invert(1);
-    border: 1px solid blue;
   }
 
   .nav-pills .nav-link.active {
     background-color: rgba(0, 0, 0, 0);
+    transform: scale(1.5);
+    color: cyan;
   }
 
   div.navbar a, i {
     color: white;
     text-decoration: none;
     transition: all 0.5s;
+    cursor: pointer;
   }
 
   .navbar i {
-    font-size: 2em;
+    font-size: 1.5em;
+    position: relative;
   }
+
+  .navbar i span {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    font-size: .8em;
+    filter:blur(2px);
+    color: pink;
+  }
+
+  .navbar i:hover span {
+    animation: flicker 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  10% { opacity: 0.7; }
+  20% { opacity: 0.5; }
+  30% { opacity: 0.5; }
+  40% { opacity: 1; }
+  50% { opacity: 0.7; }
+  60% { opacity: 1; }
+  70% { opacity: 0.7; }
+  80% { opacity: 0.5; }
+  90% { opacity: 0.4; }
+  100% { opacity: 6; }
+}
+
+
+
+
+
+
 
   div.navbar a:hover, i:hover {
     color: cyan;
@@ -47,46 +93,17 @@
     transition: all 0.5s;
   }
 
-
   @media only screen and (max-width: 767px) {
     .navbar-collapse {
-      opacity: 0;
       width: 100%;
       position: absolute; 
       top: 0;
       left: 0;
-      max-height: 0;
-      background-color: blue;
-      transition: all 0.5s;
-    }
-    div.navbar-collapse {
-      display: block;
-    }
-
-    .navbar-collapse.show {
-      opacity: 1;
-      max-height: 100%;
-      background-color: pink;
-      transition: all 0.5s;
-
     }
   }
-
-  .navbar-collapse {
-    transition: all 0.5s;
-    max-height: 100%;
-  }
-
-  .navbar-collapse.show {
-    flex-basis: 0;
-    transition: all 0.5s;
-    max-height: 0;
-  }
-
-  
 </style>
 
-<div class="navbar navbar-expand-md navbar py-2 w-100">    
+<div class="navbar navbar-expand-md navbar">    
   <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
     <%= image_tag 'list-icon.svg' %>
   </button>
@@ -106,7 +123,7 @@
         <a class="nav-link"　id="pills-chat-tab" data-toggle="pill" href="#pills-chat" role="tab" aria-controls="pills-chat" aria-selected="false">Hello</a>
       </li>
       <li>
-        <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"></i>
+        <i class="far fa-lightbulb" id="style-changer" onclick="changeStyleYellow()"><span>*</span></i>
       </li>
     </ul>
   </div>
@@ -163,7 +180,6 @@
 
   navbarToggler.addEventListener('click', function() {
     navbar.classList.toggle('show')
-    console.log('you should work!')
   })
 
   document.querySelectorAll('a.nav-link').forEach((element) => {
