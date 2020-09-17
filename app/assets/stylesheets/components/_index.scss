@@ -4,6 +4,12 @@
 @import "navbar";
 @import "footer";
 
+:root {
+  --bg-color: white;
+  --font-color: black;
+  --hover-color: red;
+}
+
 html,
 body {
   height: 100%;
