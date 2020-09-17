@@ -1,29 +1,150 @@
+<style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
 
-<div class="container-fluid w-100 p-3">
-  <h2>About</h2>
-  <p>Hi, I'm Hayato.</p>
-  <p>
-    Web application developer specializing in Ruby on Rails.
-    Currently open to work and always looking for the next big project to work on. 
-  </p>
-  <p>Currently based in <a class="internet-link" href="https://en.wikipedia.org/wiki/Shinagawa">Shinagawa, Tokyo,</a> originally from <a class="internet-link" href="https://en.wikipedia.org/wiki/Manawatu_District">Manawatu, New Zealand.</a></p>
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-  <p>Intrigued by nature, music, art, martial arts, VFX, video games, good movies, and better conversations.</p>
+    .swiper-container {
+      width: 70vh;
+      height: 70vh;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      position: relative;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
 
-  <div class="about-box">
-    <%= image_tag 'hiking.jpg' %>
-    <p>I'm at my happiest when I'm outside camping or going for walk in the bush.</p>
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .swiper-text-overlay {
+      position: absolute; 
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 20px;
+      color: white;
+      font-size: 2em;
+      font-family: helvetica;
+      transition: all 0.5s;
+    }
+
+    .show-overlay {
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .swiper-container {
+        width: 90vw;
+        height: 90vw;
+      }
+      .swiper-text-overlay {
+        font-size: 1.3em;
+        padding: 8px;
+      }
+      .swiper-pagination {
+        transform: translateY(-25px);
+      }
+    }
+  </style>
+
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url(https://images.unsplash.com/photo-1600195077909-46e573870d99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
+        <div class="swiper-text-overlay">
+          <p>Hi, I'm Hayato.</p>
+          <p>
+            Web application developer specializing in Ruby on Rails.
+            Currently open to work and always looking for the next big project to work on. 
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("musashikoyama.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Currently based in <a class="internet-link" href="https://en.wikipedia.org/wiki/Shinagawa">Shinagawa, Tokyo,</a> originally from <a class="internet-link" href="https://en.wikipedia.org/wiki/Manawatu_District">Manawatu, New Zealand.</a></p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("video_games.gif") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Intrigued by nature, music, art, martial arts, VFX, video games, good movies, and better conversations.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("hiking.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>I'm at my happiest when I'm outside camping or going for walk in the bush.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("cooking.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Cooking is one of my passions, I really enjoy cooking for myself.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("yoshi_hik.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Two of the characters I grew up with: My older brother, and my dog, Yoshi.</p>
+        </div>
+      </div>
+    </div>
+
+          <!-- If we need navigation buttons -->
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 
-  <div class="about-box">
-    <p>Cooking is one of my passions, I really enjoy cooking for myself.</p>
-    <%= image_tag 'cooking.jpg' %>
-  </div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  <div class="about-box">
-    <%= image_tag 'yoshi_hik.jpg' %>
-    <p>Two of the characters I grew up with: My older brother, and my dog, Yoshi.</p>
-  </div>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      mousewheel: true,
+      loop: true,
+      speed: 500,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      observer: true,
+      observeParents: true,
+    });
 
-</div>
-
+  document.querySelectorAll('.swiper-text-overlay').forEach(el => {
+    el.addEventListener('mouseover', function() {
+      el.classList.remove('show-overlay')
+    });
+    el.addEventListener('mouseout', function() {
+      el.classList.add('show-overlay')
+    });
+  })
+</script>
