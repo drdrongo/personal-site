@@ -10,6 +10,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("swiper")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -30,6 +31,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 const hamburger = () => {
@@ -64,9 +67,9 @@ panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
 panels.forEach(panel => { panel.addEventListener('mouseover', addActiveClass) });
 
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // hamburger();
+  
 });
