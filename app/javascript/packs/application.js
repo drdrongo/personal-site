@@ -55,18 +55,8 @@ function removeOpenClass() {
   this.classList.remove('open');
 }
 
-function addOpenActiveClass() {
-  this.classList.add('open-active');
-}
-
-function removeOpenActiveClass() {
-  this.classList.remove('open-active');
-}
-
 panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
 panels.forEach(panel => { panel.addEventListener('mouseout', removeOpenClass) });
-panels.forEach(panel => { panel.addEventListener('mouseover', addOpenActiveClass) });
-panels.forEach(panel => { panel.addEventListener('mouseout', removeOpenActiveClass) });
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
