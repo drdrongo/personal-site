@@ -86,5 +86,13 @@
     display: flex;
     flex-direction: column;
   }
-  
+  .panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+  }
 }
