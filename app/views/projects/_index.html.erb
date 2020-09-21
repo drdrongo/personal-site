@@ -1,9 +1,11 @@
 <div class="panels">
   <% projects.each do |project| %>
     <div class="panel" style='background-image: url(<%= asset_path("#{project.title.gsub(' ', '_')}.jpg") %>);'>
-      <a href="<%= project.link %>" target="_blank">
-      </a>
       <h3><%= project.title %></h3>
+      <div class="project-description-box">
+        <p><%= project.description %></p>
+        <a class="project-link-button" href="<%= project.link %>" target="_blank">visit</a>
+      </div>
     </div>
   <% end %>
 </div>
