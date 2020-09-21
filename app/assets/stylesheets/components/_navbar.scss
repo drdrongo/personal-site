@@ -12,9 +12,8 @@ div.navbar {
     align-items: center;
     justify-content: center;
   }
-  img {
-    width: 36px;
-    filter: invert(1);
+  svg {
+    fill: var(--font-color);
   }
 }
 
