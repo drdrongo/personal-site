@@ -32,14 +32,11 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { addPanelListeners } from './panel';
-import { hamburger } from './hamburger';
-
-
-
+import { swiper } from './swiper';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  hamburger();
-  addPanelListeners();
+  addPanelListeners;
+  swiper;
 });
