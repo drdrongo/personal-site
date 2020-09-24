@@ -31,45 +31,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
-
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-const hamburger = () => {
-  let x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-
-const panels = document.querySelectorAll('.panel');
-
-function addOpenClass() {
-  this.classList.add('open');
-}
-function addActiveClass() {
-  this.classList.add('open-active');
-}
-
-function removeActiveClass() {
-  this.classList.remove('open-active');
-}
-function removeOpenClass() {
-  this.classList.remove('open');
-}
-
-panels.forEach(panel => { panel.addEventListener('mouseout', removeActiveClass) });
-panels.forEach(panel => { panel.addEventListener('mouseout', removeOpenClass) });
-panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
-panels.forEach(panel => { panel.addEventListener('mouseover', addActiveClass) });
-
+import { addPanelListeners } from './panel';
+import { swiper } from './swiper';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // hamburger();
-  
+  addPanelListeners;
+  swiper;
 });

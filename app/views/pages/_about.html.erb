@@ -1,77 +1,50 @@
-<!-- Swiper -->
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" style="background-image: url(https://images.unsplash.com/photo-1600195077909-46e573870d99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
-      <div class="swiper-text-overlay">
-        <p>Hi, I'm Hayato.</p>
-        <p>
-          Web application developer specializing in Ruby on Rails.
-          Currently open to work and always looking for the next big project to work on. 
-        </p>
+<div class="about-container">
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url(https://images.unsplash.com/photo-1600195077909-46e573870d99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
+        <div class="swiper-text-overlay">
+          <p>Hi, I'm Hayato.</p>
+          <p>
+            Web application developer specializing in Ruby on Rails.
+            Currently open to work and always looking for the next big project to work on. 
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="swiper-slide" style='background-image: url(<%= asset_path("musashikoyama.jpg") %>);'>
-      <div class="swiper-text-overlay">
-        <p>Currently based in <a class="internet-link" href="https://en.wikipedia.org/wiki/Shinagawa">Shinagawa, Tokyo,</a> originally from <a class="internet-link" href="https://en.wikipedia.org/wiki/Manawatu_District">Manawatu, New Zealand.</a></p>
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("musashikoyama.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Currently based in <a class="internet-link" href="https://en.wikipedia.org/wiki/Shinagawa">Shinagawa, Tokyo,</a> originally from <a class="internet-link" href="https://en.wikipedia.org/wiki/Manawatu_District">Manawatu, New Zealand.</a></p>
+        </div>
       </div>
-    </div>
 
-    <div class="swiper-slide" style='background-image: url(<%= asset_path("video_games.gif") %>);'>
-      <div class="swiper-text-overlay">
-        <p>Intrigued by nature, music, art, martial arts, VFX, video games, good movies, and better conversations.</p>
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("video_games.gif") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Intrigued by nature, music, art, martial arts, VFX, video games, good movies, and better conversations.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="swiper-slide" style='background-image: url(<%= asset_path("hiking.jpg") %>);'>
-      <div class="swiper-text-overlay">
-        <p>I'm at my happiest when I'm outside camping or going for walk in the bush.</p>
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("hiking.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>I'm at my happiest when I'm outside camping or going for walk in the bush.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="swiper-slide" style='background-image: url(<%= asset_path("cooking.jpg") %>);'>
-      <div class="swiper-text-overlay">
-        <p>Cooking is one of my passions, I really enjoy cooking for myself.</p>
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("cooking.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Cooking is one of my passions, I really enjoy cooking for myself.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="swiper-slide" style='background-image: url(<%= asset_path("yoshi_hik.jpg") %>);'>
-      <div class="swiper-text-overlay">
-        <p>Two of the characters I grew up with: My older brother, and my dog, Yoshi.</p>
+      <div class="swiper-slide" style='background-image: url(<%= asset_path("yoshi_hik.jpg") %>);'>
+        <div class="swiper-text-overlay">
+          <p>Two of the characters I grew up with: My older brother, and my dog, Yoshi.</p>
+        </div>
       </div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 
+
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script>
-  var swiper = new Swiper('.swiper-container', {
-      effect: 'cube',
-      grabCursor: true,
-      mousewheel: true,
-      loop: true,
-      speed: 500,
-      cubeEffect: {
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 0,
-        shadowScale: 0.5,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      observer: true,
-      observeParents: true,
-    });
-
-  document.querySelectorAll('.swiper-text-overlay').forEach(el => {
-    el.addEventListener('mouseover', function() {
-      el.classList.remove('show-overlay')
-    });
-    el.addEventListener('mouseout', function() {
-      el.classList.add('show-overlay')
-    });
-  })
-</script>
