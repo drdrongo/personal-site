@@ -7,6 +7,12 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .hello-container {
+    flex-direction: column;
+  }
+}
+
 .hello-card {
   flex-shrink: 0;
   flex: 1 0 50%;
@@ -53,3 +59,4 @@ div.social-media-links {
 i.social-media-link {
   font-size: 2em;
 }
+

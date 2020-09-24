@@ -81,6 +81,10 @@ const setSwiper = () => {
     pagination: {
       el: '.swiper-pagination',
     },
+    navigation: {
+      nextEl: '.swiper-button-right',
+      prevEl: '.swiper-button-left',
+    },
     observer: true,
     observeParents: true,
   });
