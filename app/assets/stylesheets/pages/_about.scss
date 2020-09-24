@@ -96,3 +96,10 @@ span.swiper-pagination-bullet-active {
   left: auto;
   right: -1em;
 }
+
+.inline-internet-link {
+  color: var(--hover-color);
+  &:hover {
+    transform: scale(1.2);
+  }
+}
