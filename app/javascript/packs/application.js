@@ -31,12 +31,81 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { addPanelListeners } from './panel.js';
-import { swiper } from './swiper.js';
+// import { addPanelListeners } from './panel.js';
+// import { swiper } from './swiper.js';
+
+
+
+// #### PANELS #########################
+const panels = document.querySelectorAll('.panel');
+
+function addOpenClass() {
+  this.classList.add('open');
+}
+
+function removeOpenClass() {
+  this.classList.remove('open');
+  this.querySelector('.project-description-box').setAttribute('style', 'max-height: 0; padding: 0;')
+}
+
+function detectTheEnd(e) {
+  if (e.propertyName == "flex-grow" && e.target.classList.contains('open')) {
+    e.target.querySelector('.project-description-box').setAttribute("style", "max-height: 100%; padding: 12px;")
+  }
+}
+
+// On each projects panel, adds listener to "open" the panel, making it wider / narrower.
+panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
+panels.forEach(panel => { panel.addEventListener('mouseleave', removeOpenClass) });
+
+// When the panel has finished its "opening" transition, the description box is expanded vertically.
+panels.forEach(panel => { panel.addEventListener('transitionend', detectTheEnd) });
+
+
+
+
+// SWIPER ##############################
+const setSwiper = () => {
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'cube',
+    grabCursor: true,
+    mousewheel: true,
+    loop: true,
+    speed: 500,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 0,
+      shadowScale: 0.5,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    observer: true,
+    observeParents: true,
+  });
+}
+
+const setSwiperListeners = () => {
+  document.querySelectorAll('.swiper-text-overlay').forEach(el => {
+    el.addEventListener('mouseover', function() {
+      el.classList.remove('show-overlay')
+    });
+    el.addEventListener('mouseout', function() {
+      el.classList.add('show-overlay')
+    });
+  })
+}
+
+setSwiper();
+setSwiperListeners();
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  addPanelListeners;
-  swiper;
+
+  // addPanelListeners;
+  // swiper;
 });
