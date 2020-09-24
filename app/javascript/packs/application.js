@@ -31,52 +31,15 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { addPanelListeners } from './panel';
+import { hamburger } from './hamburger';
 
 
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-const hamburger = () => {
-  let x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-
-const panels = document.querySelectorAll('.panel');
-
-
-
-function addOpenClass() {
-  this.classList.add('open');
-}
-
-function removeOpenClass() {
-  this.classList.remove('open');
-  this.querySelector('.project-description-box').setAttribute('style', 'max-height: 0; padding: 0;')
-}
-
-function detectTheEnd(e) {
-  if (e.propertyName == "flex-grow" && e.target.classList.contains('open')) {
-    console.log(e);
-    e.target.querySelector('.project-description-box').setAttribute("style", "max-height: 100%; padding: 12px;")
-  }
-}
-
-panels.forEach(panel => { panel.addEventListener('mouseover', addOpenClass) });
-panels.forEach(panel => { panel.addEventListener('mouseleave', removeOpenClass) });
-// panels.forEach(panel => { panel.addEventListener('transitionend', function() {
-//   console.log('transition Ended')
-// }) });
-
-panels.forEach(panel => { panel.addEventListener('transitionend', detectTheEnd) });
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // hamburger();
-  
+  hamburger();
+  addPanelListeners();
 });
